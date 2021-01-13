@@ -38,10 +38,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: akhileshns/heroku-deploy@v3.8.9
-      - name: Bump version and push tag
-      - uses: anothrNick/github-tag-action@1.33.0
-        env:
-          GITHUB_TOKEN: ${{ secrets.RELEASE_BRANCHES }}
         if: ${{ github.event_name == 'push' }}
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
@@ -50,3 +46,9 @@ jobs:
           healthcheck: "https://fullstack-part.herokuapp.com/health"
           checkstring: "ok"
           rollbackonhealthcheckfailed: true
+
+      # - name: Bump version and push tag
+      #   uses: anothrNick/github-tag-action@1.33.0
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.RELEASE_BRANCHES }}
+      #   if: ${{ github.event_name == 'push' }}
