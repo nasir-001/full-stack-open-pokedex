@@ -38,11 +38,14 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: akhileshns/heroku-deploy@v3.8.9
+<<<<<<< HEAD
       - name: Bump version and push tag
         uses: anothrNick/github-tag-action@1.33.0
         if: ${{ github.event_name == 'push' }}
         env:
           GITHUB_TOKEN: ${{ secrets.RELEASE_BRANCHES }}
+=======
+>>>>>>> 47216e2ee32eb5a9ed93af633976c193e13762a4
         if: ${{ github.event_name == 'push' }}
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
