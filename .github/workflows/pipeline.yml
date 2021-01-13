@@ -46,7 +46,8 @@ jobs:
           healthcheck: "https://fullstack-part.herokuapp.com/health"
           checkstring: "ok"
           rollbackonhealthcheckfailed: true
-    # steps:
+          
+    steps:
       - uses: actions/checkout@v2
       - name: Bump version and push tag
         uses: anothrNick/github-tag-action@1.33.0
