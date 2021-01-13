@@ -50,8 +50,8 @@ jobs:
   adding_tag:
     runs-on: ubuntu-18.04
     steps:
-      - uses: actions/checkout@v2
       - name: Bump version and push tag
+      - uses: actions/checkout@v2
         uses: anothrNick/github-tag-action@1.33.0
         env:
           GITHUB_TOKEN: ${{ secrets.RELEASE_BRANCHES }}
