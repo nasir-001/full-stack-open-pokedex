@@ -37,13 +37,13 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
+      - uses: akhileshns/heroku-deploy@v3.8.9
+
       - name: Bump version and push tag
         uses: anothrNick/github-tag-action@1.33.0
         env:
           GITHUB_TOKEN: ${{ secrets.RELEASE_BRANCHES }}
-          
-      - uses: actions/checkout@v2
-      - uses: akhileshns/heroku-deploy@v3.8.9
+
         if: ${{ github.event_name == 'push' }}
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
