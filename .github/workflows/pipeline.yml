@@ -61,7 +61,6 @@ jobs:
         WITH_V: true
 
   slag_integration:
-    runs-on: ubuntu-18.04
     steps:
       - uses: 8398a7/action-slack@v3
       with:
